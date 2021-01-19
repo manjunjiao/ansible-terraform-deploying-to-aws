@@ -7,6 +7,7 @@
 3. Ansible (install via pip) # pip3 install ansible --user
 4. AWS CLI (install via pip) # pip3 install awscli --user 
 5. jq (install via package manager) - OPTIONAL # yum -y install jq
+6. boto3 # pip3 install boto3
 ```
 
 `This project has been tested on MacOS(Mojave), CentOS7. Author provides no guarantees for working with other OS's,
