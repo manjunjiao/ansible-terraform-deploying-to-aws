@@ -8,6 +8,7 @@
 4. AWS CLI (install via pip) # pip3 install awscli --user 
 5. jq (install via package manager) - OPTIONAL # yum -y install jq
 6. boto3 # pip3 install boto3
+7. vi ~/.bashrc; export PATH=$PATH:$HOME/.local/bin 
 ```
 
 `This project has been tested on MacOS(Mojave), CentOS7. Author provides no guarantees for working with other OS's,
