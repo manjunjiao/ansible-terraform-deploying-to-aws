@@ -12,21 +12,21 @@ data "aws_ssm_parameter" "JenkinsWorkerAmi" {
 
 #Create key-pair for logging into EC2 in us-east-1
 resource "aws_key_pair" "master-key" {
-  provider   = aws.region-master
+  provider   = #FIXME#
   key_name   = "jenkins"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 
 #Create key-pair for logging into EC2 in us-west-2
 resource "aws_key_pair" "worker-key" {
-  provider   = aws.region-worker
+  provider   = #FIXME#
   key_name   = "jenkins"
   public_key = file("~/.ssh/id_rsa.pub")
 }
 
 #Create and bootstrap EC2 in us-east-1
 resource "aws_instance" "jenkins-master" {
-  provider                    = aws.region-master
+  provider                    = #FIXME#
   ami                         = data.aws_ssm_parameter.JenkinsMasterAmi.value
   instance_type               = var.instance-type
   key_name                    = aws_key_pair.master-key.key_name
@@ -47,7 +47,7 @@ EOF
 
 #Create EC2 in us-west-2
 resource "aws_instance" "jenkins-worker-oregon" {
-  provider                    = aws.region-worker
+  provider                    = #FIXME#
   count                       = var.workers-count
   ami                         = data.aws_ssm_parameter.JenkinsWorkerAmi.value
   instance_type               = var.instance-type
